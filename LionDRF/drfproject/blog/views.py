@@ -10,9 +10,9 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 
 class PostList(views.APIView):
-  def get(self, request, format=None):
+  def get(self, request, format = None):
     post = Post.objects.all()
-    serializer = PostSerializer(post, many=True)
+    serializer = PostSerializer(post, many = True)
     return Response(serializer.data)
   
   def post(self, request, format=None):
